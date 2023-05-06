@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "Times New Roman";
+            font-size: 20px;
+        }
+        body{
+            width: 50%;
+            margin: 0px auto;
+            height: auto;
+            align-items: center;
+            text-align: center;
+        }
+        form{
+            margin-top: 30px;
+            width: 100%;
+
+
+        }
+        .input{
+            padding: 5px 20px;
+            margin: px;
+
+        }
+        .label{
+
+        }
+        button{
+            margin-top: 30px;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            background-color: cornflowerblue;
+        }
+        .signup{
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>LOGIN</h2>
+    <form th:action="@{/store}" method="post">
+        <div class="label">Username</div>
+        <div class="input"><input type="text" name="username"></div>
+        <div class="label" style="margin-top: 20px;">Password</div>
+        <div class="input"><input type="text" name="password"></div>
+        <button type="submit">Login</button>
+    </form>
+    <div class="signup"><a href="@{/signup}">Create account</a></div>
+</body>
+</html>

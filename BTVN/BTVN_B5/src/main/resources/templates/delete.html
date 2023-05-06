@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+    Do you want delete this account ? <span th:text="${id}"></span>
+    <form th:action="@{'/user/delete/' + ${id}}" method="post">
+        <button type="submit" id="deleteSubmit">Confirm</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+        h1{
+            color: red;
+        }
+        button{
+            background-color: cornflowerblue;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tài khoản hoặc mật khẩu không chính xác</h1>
+    <form th:action="@{/}">
+        <button type="submit">Quay lại</button>
+    </form>
+</body>
+</html>

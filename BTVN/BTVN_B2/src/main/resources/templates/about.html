@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <style>
+        body{
+            width: 80%;
+            margin: 0px auto;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            background-color: #ccc;
+            padding: 20px;
+            margin: 0px;
+        }
+        table{
+            border: 1px solid black;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>DANH SÁCH SINH VIÊN</h1>
+    <table border="1">
+        <tr style="color: aliceblue">
+            <th>Mã sinh viên</th>
+            <th>Họ và tên</th>
+            <th>Tuổi</th>
+            <th>Ngành học</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>Nguyen van a</td>
+            <td>22</td>
+            <td>cntt/td>
+        </tr>
+        <div  th:each="item : ${students}">
+            <tr>
+                <td th:text="*{item.getMsv()}"></td>
+                <td th:text="*{item.getName()}"></td>
+                <td th:text="*{item.getAge()}"></td>
+                <td th:text="*{item.getMajor()}"></td>
+            </tr>
+        </div>
+    </table>
+</body>
+</html>

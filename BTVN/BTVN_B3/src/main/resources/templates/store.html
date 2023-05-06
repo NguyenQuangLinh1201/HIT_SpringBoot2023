@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: dodgerblue;
+
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .title {
+            font-size: 150%;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+
+        }
+
+        .my-4 {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .table {
+            width: 50%;
+            margin: 0px aut;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        table {
+            display: table;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            text-indent: initial;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        .table td, .table th {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        table th {
+            color: #fdfcbd;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 2px #f6c778;
+            border: 1px solid rgba(255,255,255,.66);
+        }
+        table td {
+            color: #fff;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.66);
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        button {
+            height: 36px;
+            border: none;
+            border-radius: 10px;
+            line-height: 36px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        button:hover {
+            opacity: .7;
+        }
+
+        .seeAPI {
+            background-color: black;
+        }
+
+        .logout {
+            background-color: #586dbe;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">Danh sách tài khoản</div>
+    <div class="my-4">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên Tài Khoản</th>
+                <th>Mật khẩu</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item: ${list}">
+                <td th:text="*{item.getId()}"></td>
+                <td th:text="*{item.getUsername()}"></td>
+                <td th:text="*{item.getPassword()}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+        <form th:action="@{/api/users}" method="get">
+            <button type="submit" class="seeAPI">Show API</button>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

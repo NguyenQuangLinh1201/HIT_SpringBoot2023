@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<h2 th:text="${string}"></h2>-->
+<!--<h1 th:text="${string2}"></h1>-->
+<p th:text="${string}"></p>
+
+<div th:object="${student}">
+    <div th:text="*{msv}"></div>
+    <div th:text="*{name}"></div>
+    <div th:text="*{age}"></div>
+</div>
+
+<form th:action="@{/test}" method="post">
+    <table>
+        <tr>
+            <td>MSV</td>
+            <td><input type="text" name="msv"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="SUBMIT"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

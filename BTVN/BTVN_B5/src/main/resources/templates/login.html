@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <form th:action="@{/index}" method="post">
+        <div>Username: <input id="username" name="username" type="text" placeholder="Username"></div>
+        <div>Password: <input id="password" name="password" type="password" placeholder="password"></div>
+        <div th:text="${error}"></div><br>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Create a new account</a>
+</body>
+</html>
